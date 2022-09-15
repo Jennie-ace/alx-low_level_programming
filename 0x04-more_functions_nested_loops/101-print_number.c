@@ -1,33 +1,36 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-void print_number(unsigned int n);
+int _putchar(char c);
 
 /**
  * print_number - print number
- * @var: variable to be printed
+ * @n: params an integer
  *
- * created by: Sanctus-Peter
- * cc: 7th july, 2022
+ * No return
  */
-void print_number(int var)
+
+
+void print_number(int n)
 {
-	if (var < 0)
+	unsigned int n1 = 0;
+
+	if (n < 0)
 	{
+		n1 = -n;
 		_putchar('-');
-		var = -var;
 	}
 
-	print(var);
-}
+	else
+	{
+		n1 = n;
+	}
 
-/**
- * print - subfunction to print recursively
- * @n: variable to be printed
- */
+	if (n1 / 10)
+	{
+		print_number(n1 / 10);
+	}
 
-void print_number(unsigned int n)
-{
-	if (n / 10)
-		print(n / 10);
-	_putchar('0' + n % 10);
+	_putchar((n1 % 10) + '0');
 }
