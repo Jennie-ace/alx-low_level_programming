@@ -16,7 +16,7 @@ int strlen_no_wilds(char *str)
 {
 	int len = 0, index = 0;
 
-if (*(str + index))
+	if (*(str + index))
 	{
 		if (*str != '*')
 			len++;
@@ -58,7 +58,7 @@ char *postfix_match(char *str, char *postfix)
 	int postfix_len = strlen_no_wilds(postfix) - 1;
 
 if (*postfix == '*')
-		iterate_wild(&postfix);
+	iterate_wild(&postfix);
 
 	if (*(str + str_len - postfix_len) == *postfix && *postfix != '\0')
 
@@ -86,7 +86,7 @@ int wildcmp(char *s1, char *s2)
 		s2 = postfix_match(s1, s2);
 	}
 
-if (*s2 == '\0')
+	if (*s2 == '\0')
 		return (1);
 
 	if (*s1 != *s2)
