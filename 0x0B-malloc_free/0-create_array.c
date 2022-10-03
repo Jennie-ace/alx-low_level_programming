@@ -1,33 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
-#include <string.h>
 /**
- * _strdup - allocate space in memory and make a copy of str
- * @str: pointer to the str to be copied
+ * create_array - create an array of char
+ * @size: size of the array
+ * @arr: character
  *
  * Return: pointer to the duplicate string, or Null if failed
  *
  * Created by: Jennie
  * cc: 3rd October, 2022
  */
-char *_strdup(char *str)
+char *create_array(unsigned int size, char arr)
 {
-	int size = 0;
-	char *strCopy;
+	char *array_alloc = malloc(size * sizeof(char));
+	unsigned int i;
 
-	if (str == NULL)
+
+	if (size == 0 || array_alloc == NULL)
 		return (NULL);
 
-	for (; str[size] != '\0'; size++)
-		;
+	for (i = 0; i < size; i++)
+		array_alloc[i] = arr;
 
-	strCopy = malloc(size * sizeof(*str) + 1);
-
-	if (strCopy == 0)
-		return (NULL);
-
-	strcpy(strCopy, str);
-		return (strCopy);
+	return (array_alloc);
 }
 
