@@ -8,8 +8,7 @@
  * @old_size: size of the previous memory
  * @new_size: new size in bytes
  *
- * Return: pointer to the reallocated memory if successful,
- * NULL, otherwise
+ * Return: pointer to the reallocated memory if successful, NULL, otherwise
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
