@@ -1,0 +1,1 @@
+A node is a structure with a pointer to the next node and value information and it is a space allocated in memory. The head of a linker list is the first node and the tail of a linked list is the node with the pointer to the next equals to NULL
